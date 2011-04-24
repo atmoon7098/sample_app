@@ -1,4 +1,8 @@
 SampleApp::Application.routes.draw do
+  get "moonpages/home"
+
+  get "moonpages/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
