@@ -1,7 +1,10 @@
 SampleApp::Application.routes.draw do
-  get "moonpages/home"
-  get "moonpages/contact"
-  get "moonpages/about"
+  match '/contact', :to => 'moonpages#contact'
+  match '/about',   :to => 'moonpages#about'
+  match '/help',    :to => 'moonpages#help'
+  
+  root :to => 'moonpages#home'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -26,7 +29,7 @@ SampleApp::Application.routes.draw do
   #
   #     collection do
   #       get 'sold'
-  #     end
+  #     end0
   #   end
 
   # Sample resource route with sub-resources:
