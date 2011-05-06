@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #cff;
+  background: #b8dbff;//#cff;
 }
 
 header {
@@ -11,7 +11,7 @@ header {
 }
 
 header img {
-  padding: 1em;
+  //padding: 1em;
   background: #fff;
 }
 
@@ -99,7 +99,8 @@ a.signup_button {
   text-align: center;
   width: 190px;
   color: #fff;
-  background: #006400;
+  background: #0b71bd;//#006400;
+  //background: url(images/signup_bg.jpg) center repeat;
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
