@@ -8,4 +8,7 @@ module ApplicationHelper
 	  "#{base_title} | #{@title}"
     end
   end	
+  def logo
+    image_tag("seagull.jpg", :alt => "Sideways Logic", :class => "round")
+  end
 end
