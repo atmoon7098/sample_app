@@ -1,4 +1,16 @@
-
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="ad">Post a new ad?</h1>
+        <%= render 'shared/ad_form' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
+<% else %>
   <h1>Sideways Logic</h1>
   <p>
     <a href="http://www.sidewayslogic.com">Sideways Logic</a> is a privately
@@ -12,3 +24,4 @@
     you, we would like you to sign up and fill out some information.
   </p>
   <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+<% end %>

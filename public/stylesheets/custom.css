@@ -2,12 +2,7 @@
   width: 710px;
   
 }
-/*
-.content {
-  width: 720px;
-  background-color: #dee;
-}
-*/
+
 body {
   background: #b8dbff;//#cff;
 }
@@ -200,7 +195,10 @@ ul.users {
 }
 
 h1.ad {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.2em;
+  font-weight: 500;
+  font-size: 170%;
+  color: #3276c8;
 }
 
 table.ads {

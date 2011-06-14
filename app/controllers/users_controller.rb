@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   
   private
 
-    # Moved to sessions_helper.rb
+    # Moved to sessions_helper.rb 6/14/2011
     #def authenticate
     #  deny_access unless signed_in?
     #end

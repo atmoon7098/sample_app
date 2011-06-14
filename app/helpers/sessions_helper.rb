@@ -25,6 +25,7 @@ module SessionsHelper
     user == current_user
   end
   
+  # put here because both user and ads need user to signin 6/14/2011
   def authenticate
     deny_access unless signed_in?
   end
