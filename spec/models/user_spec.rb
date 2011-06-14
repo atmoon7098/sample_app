@@ -141,5 +141,24 @@ describe User do
         Ad.find_by_id(ad.id).should be_nil
       end
     end
+	
+	# test for feed 
+	describe "status feed" do
+
+      it "should have a feed" do
+        @user.should respond_to(:feed)
+      end
+
+      it "should include the user's microposts" do
+        @user.feed.include?(@ad1).should be_true
+        @user.feed.include?(@ad2).should be_true
+      end
+
+      it "should not include a different user's ads" do
+        ad3 = Factory(:ad,
+                      :user => Factory(:user, :email => Factory.next(:email)))
+        @user.feed.include?(ad3).should be_false
+      end
+    end
   end
 end

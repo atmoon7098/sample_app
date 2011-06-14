@@ -64,4 +64,36 @@ describe AdsController do
       end
     end
   end
+  # test for deleting ads
+  describe "DELETE 'destroy'" do
+
+    describe "for an unauthorized user" do
+
+      before(:each) do
+        @user = Factory(:user)
+        wrong_user = Factory(:user, :email => Factory.next(:email))
+        test_sign_in(wrong_user)
+        @ad = Factory(:ad, :user => @user)
+      end
+
+      it "should deny access" do
+        delete :destroy, :id => @ad
+        response.should redirect_to(root_path)
+      end
+    end
+
+    describe "for an authorized user" do
+
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+        @ad = Factory(:ad, :user => @user)
+      end
+
+      it "should destroy the micropost" do
+        lambda do 
+          delete :destroy, :id => @ad
+        end.should change(Ad, :count).by(-1)
+      end
+    end
+  end
 end
