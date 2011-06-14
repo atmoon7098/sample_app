@@ -118,5 +118,28 @@ describe User do
       @user.should be_admin
     end
   end
-  
+  # Add test for has_many association
+  describe "ad associations" do
+
+    before(:each) do
+      @user = User.create(@attr)
+	  @ad1 = Factory(:ad, :user => @user, :created_at => 1.day.ago)
+      @ad2 = Factory(:ad, :user => @user, :created_at => 1.hour.ago)
+    end
+
+    it "should have a ads attribute" do
+      @user.should respond_to(:ads)
+    end
+	
+	it "should have the right ads in the right order" do
+      @user.ads.should == [@ad2, @ad1]
+    end
+	
+	it "should destroy associated ads" do
+      @user.destroy
+      [@ad1, @ad2].each do |ad|
+        Ad.find_by_id(ad.id).should be_nil
+      end
+    end
+  end
 end

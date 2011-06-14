@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
   
+  # Add association to the Ad model
+  has_many :ads, :dependent => :destroy
+  
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 }
   validates :email, :presence => true
@@ -24,6 +27,7 @@ class User < ActiveRecord::Base
                        :length       => { :within => 6..40 }  
 					   
   before_save :encrypt_password
+  
   
   # Return true if the user's password matches the submitted password.
   def has_password?(submitted_password)

@@ -7,11 +7,12 @@ class UsersController < ApplicationController
     @title = "All users"
     #@users = User.all
 	#@users = User.paginate(:page => params[:page])
-	@users = User.paginate(:page => params[:page], :per_page => 15)
+	@users = User.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
     @user = User.find(params[:id])
+	@ads = @user.ads.paginate(:page => params[:page], :per_page => 5)
 	@title = @user.name
   end
   
@@ -56,9 +57,10 @@ class UsersController < ApplicationController
   
   private
 
-    def authenticate
-      deny_access unless signed_in?
-    end
+    # Moved to sessions_helper.rb
+    #def authenticate
+    #  deny_access unless signed_in?
+    #end
 	
 	def correct_user
       @user = User.find(params[:id])
@@ -69,3 +71,4 @@ class UsersController < ApplicationController
       redirect_to(root_path) unless current_user.admin?
     end
 end
+

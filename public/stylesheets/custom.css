@@ -1,7 +1,13 @@
 .container {
   width: 710px;
+  
 }
-
+/*
+.content {
+  width: 720px;
+  background-color: #dee;
+}
+*/
 body {
   background: #b8dbff;//#cff;
 }
@@ -19,7 +25,7 @@ section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #fff;
+  background: #dee; //#fff;
 }
 
 section h1 {
@@ -79,6 +85,8 @@ nav ul li a:hover {
 }
 
 footer {
+  clear: both;
+  width: 100%;
   text-align: center;
   margin-top: 10px;
   width: 710px;
@@ -189,4 +197,59 @@ ul.users {
 
 .users li {
   list-style: none;
+}
+
+h1.ad {
+  margin-bottom: 0.3em;
+}
+
+table.ads {
+  margin-top: 1em;
+}
+
+table.ads tr {
+  height: 70px;
+}
+
+table.ads tr td.gravatar {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  width: 50px;
+}
+
+table.ads tr td.ad {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.ads tr td.ad span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}
+
+div.user_info img {
+  padding-right: 0.1em;
+}
+
+div.user_info a {
+  text-decoration: none;
+}
+
+div.user_info span.user_name {
+  position: absolute;
+}
+
+div.user_info span.ads {
+  font-size: 80%;
+}
+
+form.new_ad {
+  margin-bottom: 2em;
+}
+
+form.new_ad textarea {
+  height: 4em;
+  margin-bottom: 0;
 }

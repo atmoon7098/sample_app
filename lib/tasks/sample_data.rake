@@ -17,5 +17,11 @@ namespace :db do
                    :password => password,
                    :password_confirmation => password)
     end
+	User.all(:limit => 6).each do |user|
+      15.times do
+        user.ads.create!(:description => Faker::Lorem.sentence(5))
+      end
+    end
+	
   end
 end

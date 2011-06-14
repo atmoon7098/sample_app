@@ -1,6 +1,7 @@
 class MoonpagesController < ApplicationController
   def home
     @title = "Home"
+	@ad = Ad.new if signed_in?
   end
 
   def contact
